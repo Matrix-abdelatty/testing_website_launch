@@ -1,0 +1,30 @@
+hostname 
+dpg-clkvn3sjtl8s73f44910-a
+-
+
+Port
+5432
+-
+
+Database
+database_name_postgress
+
+-
+Username
+database_name_postgress_user
+-
+
+password
+Y28wL6K5cOaaSOmBTwTD0pMCWtNNXksz
+-
+
+internal link 
+postgres://database_name_postgress_user:Y28wL6K5cOaaSOmBTwTD0pMCWtNNXksz@dpg-clkvn3sjtl8s73f44910-a/database_name_postgress
+-
+
+external link
+postgres://database_name_postgress_user:Y28wL6K5cOaaSOmBTwTD0pMCWtNNXksz@dpg-clkvn3sjtl8s73f44910-a.oregon-postgres.render.com/database_name_postgress
+-
+
+PSQL Command
+PGPASSWORD=Y28wL6K5cOaaSOmBTwTD0pMCWtNNXksz psql -h dpg-clkvn3sjtl8s73f44910-a.oregon-postgres.render.com -U database_name_postgress_user database_name_postgress
