@@ -11,10 +11,12 @@ vscode settings:
 
 
 
-prober way to construct flask websites
+prober way to construct flask websites+connecting to database
 https://medium.com/uneritx/how-to-connect-python-and-flask-to-a-database-d08aed16b81
+https://www.geeksforgeeks.org/connect-flask-to-a-database-with-flask-sqlalchemy/
 
 
+https://testdriven.io/blog/flask-render-deployment/
 
 ------------------------------------------------------------------------------------------------------------
 ---------------- render.com site postgres configurations ------------
