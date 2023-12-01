@@ -8,7 +8,7 @@ from sqlalchemy import Table, Column, Integer, ForeignKey
 from sqlalchemy.orm import relationship ,joinedload
 from flask_login import UserMixin, login_user, LoginManager, login_required, current_user, logout_user
 from all_forms import CreatePostForm ,RegisterForm ,LoginForm ,CommentForm
-
+import os
 
 from functools import wraps
 
@@ -20,7 +20,13 @@ ckeditor = CKEditor(app)
 Bootstrap(app)
 
 ##CONNECT TO DB
-app.config['SQLALCHEMY_DATABASE_URI'] = r'sqlite:///E:\All coursessssss\All  python staff\100 Days of Code\000-solutions and projects\69. Day 69 - Advanced - Blog Capstone Project Part 4 - Adding Users\blog.db'
+# app.config['SQLALCHEMY_DATABASE_URI'] = r'sqlite:///E:\All coursessssss\All  python staff\100 Days of Code\000-solutions and projects\69. Day 69 - Advanced - Blog Capstone Project Part 4 - Adding Users\blog.db'
+
+
+app.config['SQLALCHEMY_DATABASE_URI'] =os.environ.get("DATABASE_URL")
+
+
+
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
