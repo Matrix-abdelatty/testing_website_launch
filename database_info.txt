@@ -1,3 +1,5 @@
+variable name = DATABASE_URL
+
 hostname 
 dpg-clkvn3sjtl8s73f44910-a
 -
@@ -20,6 +22,7 @@ Y28wL6K5cOaaSOmBTwTD0pMCWtNNXksz
 
 internal link 
 postgres://database_name_postgress_user:Y28wL6K5cOaaSOmBTwTD0pMCWtNNXksz@dpg-clkvn3sjtl8s73f44910-a/database_name_postgress
+postgresql://database_name_postgress_user:Y28wL6K5cOaaSOmBTwTD0pMCWtNNXksz@dpg-clkvn3sjtl8s73f44910-a/database_name_postgress
 -
 
 external link
