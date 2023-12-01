@@ -8,7 +8,7 @@ from sqlalchemy import Table, Column, Integer, ForeignKey
 from sqlalchemy.orm import relationship ,joinedload
 from flask_login import UserMixin, login_user, LoginManager, login_required, current_user, logout_user
 from all_forms import CreatePostForm ,RegisterForm ,LoginForm ,CommentForm
-from flask_gravatar import Gravatar
+
 
 from functools import wraps
 
@@ -107,15 +107,6 @@ def load_user(user_id):
     # return db.session.get((user_id))
 
 
-
-gravatar = Gravatar(app,
-                    size=100,
-                    rating='g',
-                    default='retro',
-                    force_default=False,
-                    force_lower=False,
-                    use_ssl=False,
-                    base_url=None)
 
 
 
