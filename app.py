@@ -9,9 +9,25 @@ from sqlalchemy.orm import relationship ,joinedload
 from flask_login import UserMixin, login_user, LoginManager, login_required, current_user, logout_user
 from all_forms import CreatePostForm ,RegisterForm ,LoginForm ,CommentForm
 import os
-from flask_gravatar import Gravatar
-
 from functools import wraps
+import hashlib
+
+
+
+
+
+def gravatar(email, size=100, default='retro', rating='g'):
+    hash_email = hashlib.md5(email.lower().encode('utf-8')).hexdigest()
+    gravatar_url = f"https://www.gravatar.com/avatar/{hash_email}?s={size}&d={default}&r={rating}"
+    return gravatar_url
+
+
+
+
+
+
+
+
 
 
 
@@ -24,6 +40,10 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
 ckeditor = CKEditor(app)
 Bootstrap(app)
+
+# Register the gravatar filter
+app.jinja_env.filters['gravatar'] = gravatar
+
 
 ##CONNECT TO DB
 # app.config['SQLALCHEMY_DATABASE_URI'] = r'sqlite:///E:\All coursessssss\All  python staff\100 Days of Code\000-solutions and projects\69. Day 69 - Advanced - Blog Capstone Project Part 4 - Adding Users\blog.db'
@@ -126,15 +146,6 @@ def load_user(user_id):
 
 
 
-
-gravatar = Gravatar(app,
-                    size=100,
-                    rating='g',
-                    default='retro',
-                    force_default=False,
-                    force_lower=False,
-                    use_ssl=False,
-                    base_url=None)
 
 
 
