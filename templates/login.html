@@ -32,9 +32,8 @@
         {% endwith %}
         {{ wtf.quick_form(form, novalidate=True, button_map={"submit": "primary"}) }}
 
-        <a href="{{ url_for('register') }}">
-            <h2 class= Register</h2>
-          </a>
+      <a class="btn btn-primary btn-block mt-4" href="{{ url_for('register') }}" >Or Register?</a>
+
 
 
 
