@@ -35,7 +35,7 @@ def gravatar(email, size=100, default='retro', rating='g'):
 
 
 ## admin is the first user >> admin@gmail.com password = Test@123
-# guest user >> guest_one@gmail.com = Test@123
+# guest user >> guest_one@gmail.com = 123456
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
 ckeditor = CKEditor(app)
