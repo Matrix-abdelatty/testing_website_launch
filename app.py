@@ -9,8 +9,14 @@ from sqlalchemy.orm import relationship ,joinedload
 from flask_login import UserMixin, login_user, LoginManager, login_required, current_user, logout_user
 from all_forms import CreatePostForm ,RegisterForm ,LoginForm ,CommentForm
 import os
+from flask_gravatar import Gravatar
 
 from functools import wraps
+
+
+
+
+
 
 ## admin is the first user >> admin@gmail.com password = Test@123
 # guest user >> guest_one@gmail.com = Test@123
@@ -119,6 +125,16 @@ def load_user(user_id):
 
 
 
+
+
+gravatar = Gravatar(app,
+                    size=100,
+                    rating='g',
+                    default='retro',
+                    force_default=False,
+                    force_lower=False,
+                    use_ssl=False,
+                    base_url=None)
 
 
 
