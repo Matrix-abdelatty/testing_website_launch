@@ -36,18 +36,22 @@ Bootstrap(app)
 # Register the gravatar filter
 app.jinja_env.filters['gravatar'] = gravatar
 
-
-##CONNECT TO DB
+### -------------- connecting the database -------------------------
+##CONNECT TO(( SQL ))DB
 # app.config['SQLALCHEMY_DATABASE_URI'] = r'sqlite:///E:\All coursessssss\All  python staff\100 Days of Code\000-solutions and projects\69. Day 69 - Advanced - Blog Capstone Project Part 4 - Adding Users\blog.db'
 
+### ---- connecting to postgres database as EXTERNAL connection 
 
-# app.config['SQLALCHEMY_DATABASE_URI'] =os.environ.get("DATABASE_URL")
-### - connecting to postgres database as external connection 
+# in windows cmd as admin >> setx DATABASE_URL "postgresql://database_name_postgress_user:Y28wL6K5cOaaSOmBTwTD0pMCWtNNXksz@dpg-clkvn3sjtl8s73f44910-a.oregon-postgres.render.com/database_name_postgress" /m
+
+app.config['SQLALCHEMY_DATABASE_URI'] =os.environ.get("DATABASE_URL")
+
+# OR 
+
 # app.config['SQLALCHEMY_DATABASE_URI'] =(r"postgresql://database_name_postgress_user:Y28wL6K5cOaaSOmBTwTD0pMCWtNNXksz@dpg-clkvn3sjtl8s73f44910-a.oregon-postgres.render.com/database_name_postgress")
 
+### ---------------------------------------------
 
-### ---- connecting to postgres database as INTERNAL connection 
-app.config['SQLALCHEMY_DATABASE_URI'] =(r"postgresql://database_name_postgress_user:Y28wL6K5cOaaSOmBTwTD0pMCWtNNXksz@dpg-clkvn3sjtl8s73f44910-a/database_name_postgress")
 
 
 
