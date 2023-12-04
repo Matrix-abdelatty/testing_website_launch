@@ -4,16 +4,12 @@ from flask_ckeditor import CKEditor
 from datetime import date
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import Table, Column, Integer, ForeignKey
-from sqlalchemy.orm import relationship ,joinedload
-from flask_login import UserMixin, login_user, LoginManager, login_required, current_user, logout_user
+from sqlalchemy.orm import relationship 
+from flask_login import UserMixin, login_user, LoginManager, current_user, logout_user
 from all_forms import CreatePostForm ,RegisterForm ,LoginForm ,CommentForm
 import os
 from functools import wraps
 import hashlib
-
-
-
 
 
 def gravatar(email, size=100, default='retro', rating='g'):
@@ -25,11 +21,8 @@ def gravatar(email, size=100, default='retro', rating='g'):
 
 
 
-
-## admin is the first user >> admin@gmail.com password = Test@123
-# guest user >> guest_one@gmail.com = 123456
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = os.environ.get('MY_FLASK_SECRET_KEY')
 ckeditor = CKEditor(app)
 Bootstrap(app)
 
@@ -157,7 +150,7 @@ def admin_only(f):
     
     
         ### to show delete and create_now_post buttons >change this in index.html > at two locations
-        # {% if current_user.is_authenticated  and current_user.id == 2 %}    
+        # {% if current_user.is_authenticated  and current_user.id == 1 %}    
 
     return decorated_function
 
