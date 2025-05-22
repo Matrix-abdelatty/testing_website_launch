@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: n8n
+    env: node
+    buildCommand: npm install
+    startCommand: n8n
+    envVars:
+      - key: NODE_VERSION
+        value: 20.14.0
+      - key: WEBHOOK_URL
+        value: https://test-one-f9zj.onrender.com
